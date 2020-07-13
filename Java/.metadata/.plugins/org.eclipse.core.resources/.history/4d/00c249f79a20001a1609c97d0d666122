@@ -1,0 +1,35 @@
+package com.io;
+import java.io.*;
+public class Writer2 
+{
+	
+	public static void main(String[] args)
+	{
+		char[] in = new char[50];
+		int size;
+		try
+		{
+			File file = new File("filewriter2.txt");
+			FileWriter fw = new FileWriter(file); //creates the actual file and FileWriter Object
+			fw.write("howdy\nnfolks\n");
+			fw.flush();
+			fw.close();
+			
+			FileReader fr = new FileReader(file);
+			size = fr.read(in);
+			System.out.println(size+ " ");
+			for(char c:in)
+			{
+				System.out.println(c);
+			}
+			fr.close();
+			
+		}
+		catch(IOException e)
+		{
+			e.getMessage();
+		}
+
+	}
+
+}

@@ -1,0 +1,27 @@
+package com.util;
+
+public class MyDate {
+
+	int dd;
+    String mon;
+    int yy;
+    
+    public MyDate() {
+    	dd = 1;
+    	mon = "Jan";
+    	yy = 1900;
+   	}
+    
+    public void displayDate(){
+        System.out.println("Date is: "+dd+"-"+mon+"-"+yy);
+    }
+   
+    public void setDate(int d,String m,int y){
+        dd = d;
+        mon = m;
+        yy = y;
+    }
+    
+ 
+
+}

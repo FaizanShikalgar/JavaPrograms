@@ -1,0 +1,54 @@
+package com.collection;
+import java.util.*;
+/* to sort the array object we use the sort of Arrays class.
+ * when ever you wnat to search an object from the array the array must be sorted. first  */
+public class SearchObjArry 
+{
+	
+	public static void main(String[] args) 
+	{
+		String [] sa = {"one","two","three","four"};
+	    Arrays.sort(sa);//using the Arrays.sort(arrayToSort);
+		for(String s:sa)
+		{
+			System.out.println(s+ "");
+			
+		}
+	     System.out.println("\n one="+Arrays.binarySearch(sa,"one")); //searches the elements usin the binary search.withe the help of Compareable.compareTo which is already overrriden in String Class
+		/* the Comparable.compareTo() can be implement 
+		 * to have only one Search so the Search it with the new
+		 *  Criteria you need to use the 
+		 *  Comparator.compare.and to use it you need 
+		 *  to sort the array with the
+		 *   Arrays.sort(arraySort,Comparator) version*/
+	    System.out.println("now reverse sort");
+		ReSortComparator rs = new ReSortComparator();
+		Arrays.sort(sa,rs);
+		System.out.println("Array in reverse Order:");
+		for(String s:sa)
+		{
+			System.out.println(s+"");
+			
+		}
+		System.out.println("\n one="
+		+Arrays.binarySearch(sa,"one",rs));
+		System.out.println("\n three="
+		+Arrays.binarySearch(sa,"three",rs));
+
+	}
+	
+	}
+
+	
+
+
+
+ class ReSortComparator implements Comparator<String>
+{
+	/*if you are not using the Generics version use public int compare(object,object);*/
+	public int compare(String a,String b)
+	{
+		//System.out.println(a+"\t"+b);
+		return b.compareTo(a);
+	}
+}

@@ -1,0 +1,15 @@
+package com.objectimpl;
+
+public class TestObject {
+
+	public static void main(String[] args) {
+     int i = 10;
+     System.out.println(i);
+     
+     MyDate d1 = new MyDate();
+     System.out.println(d1);// Object class toString()
+     System.out.println(d1.hashCode());
+     
+	}
+
+}

@@ -1,0 +1,66 @@
+package com.miscellanous;
+
+public class WrapperDemo {
+	
+	public static void main(String[] args) 
+	{
+			//How to Create a Wrapper Class Object.
+			Integer i1 = new Integer(42);
+			System.out.println(i1);
+			Integer i2 = new Integer("42");
+	       //for all the Wrapper classes other than string 
+			//provide the 2 Constructors
+		  //one which take value and other take the String. 
+			//for char only one constructor is provided
+		  Character c1 = new Character('c');	
+		  
+		  Boolean b = new Boolean("TRUE");
+		  System.out.println(b);
+		  Boolean b1 = new Boolean(true);
+	      
+		  //valueOf method is used to create a Wrapper object.
+		  
+		  Integer i3 = Integer.valueOf("101011",2);
+		  System.out.println(i3);
+		  Float f2 = Float.valueOf("3.14f");
+		  
+		  //xxxValue method is used to Convert
+		  //the Wrapper object to primitive value
+		  
+		  byte bval = i2.byteValue();
+		  System.out.println(bval);
+		  
+		  //parseXxx is used to convert 
+		  //String argument to primitive
+		  
+		  double d4 = Double.parseDouble("3.14");
+		  System.out.println("d4 ="+d4);
+		  
+		  //Value of method is used to convert 
+		  //the String argument to Wrapper Object
+		  
+		  Double d5 = Double.valueOf("3.14");
+		  
+		  //using the radix arguments
+		  
+		  long L2 = Long.parseLong("101010",2);
+		  System.out.println("L2="+L2);
+		  
+		  Long L3 = Long.valueOf("101010",2);
+		  System.out.println("L3 value ="+L3);
+		  
+		  
+		  //toXxxString(used for Binary,Hexadecimal,Octal)
+		  
+		  String s3 = Integer.toHexString(254);
+		  System.out.println("254 is:"+s3);
+		  
+		  String s4 = Long.toOctalString(254);
+		  System.out.println("254(Oct):"+s4);
+		  
+		  
+		  Integer i  = 12;//autoboxing
+		  int ival = i;//autounboxing
+		}
+
+}

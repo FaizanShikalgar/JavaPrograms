@@ -1,0 +1,14 @@
+package com.exe;
+
+public class TestClone {
+
+	public static void main(String[] args) {
+
+      MyDate d1 = new MyDate(8,"Jan",2010);
+      System.out.println("Hash Code of d1:"+d1.hashCode());
+      MyDate copyCat = d1.clone();
+      System.out.println("Hash Code of d1:"+copyCat.hashCode());
+
+	}
+
+}

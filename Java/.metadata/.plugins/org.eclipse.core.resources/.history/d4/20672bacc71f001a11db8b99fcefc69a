@@ -1,0 +1,52 @@
+package com.collection;
+import java.util.*;
+/* this demo demonstrates the Converting Array in to a list by asList() which is part of Arrays class and 
+  Converting the List in to a array by toArray() which is part of set and list classes*/
+ 
+public class ConversionDemo
+{
+	
+	public static void main(String[] args) 
+	{
+		//Converting array to List.
+		String sa[] = {"one","two","three","four"};
+        List slist = Arrays.asList(sa); //make a list
+        System.out.println("Original List:"+slist)
+        System.out.println("size:"+slist.size());
+        System.out.println("idx2:"+slist.get(2));
+        //System.out.println(slist);
+        slist.set(3, "six");//change the list
+        System.out.println("Updated List:"+slist);
+        sa[1] = "five"; //change the array
+        for(String s:sa)
+        {
+          System.out.println(s + " ");
+        }
+      System.out.println("\n ns1[1]"+slist.get(1));
+      System.out.println("Adding the element in list");
+     // slist.add("Nine");
+      System.out.println("Updated Final List:"+slist);
+        
+    //Converting List to Array
+      List<Integer> il = new ArrayList<Integer>();
+        for(int x = 0;x<3;x++)
+        {
+        	il.add(x);
+        }
+        System.out.println("List Data:"+il);
+        Object [] oa = il.toArray();//create an array object
+        Integer [] ia2 = new Integer[3];
+        System.out.println("Converting an list in an array");
+        ia2 = il.toArray(ia2);//create an Integer Object
+      for(Integer i :ia2) {
+        	System.out.println(i);
+        }
+        il.add(100);
+        System.out.println("Adding the element in list"+il);
+        System.out.println("Array Elements:");
+        for(Integer i :ia2) {
+        	System.out.println(i);
+        }
+	}
+
+}

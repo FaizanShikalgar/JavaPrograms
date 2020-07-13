@@ -1,0 +1,27 @@
+package com.jdbc;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class StatementDemo {
+
+	public static void main(String[] args) {
+		try {
+			Connection  con = ConnectionUtil.getConnection();
+			Statement stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery("select * from employee");
+			while(rs.next()) {
+				System.out.println("Employee Id:"+rs.getInt("Emp_Id"));
+				System.out.println("Employee Name:"+rs.getString(2));
+				System.out.println("Salary:"+rs.getInt(3));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+}

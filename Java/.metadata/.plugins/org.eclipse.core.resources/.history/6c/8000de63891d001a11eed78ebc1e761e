@@ -1,0 +1,8 @@
+package com.miscellaneous;
+
+public class Snippet {
+	public static void main(String[] args) {
+		com.miscellaneous
+	}
+}
+

@@ -1,0 +1,25 @@
+package com.test;
+
+import com.emp.Developer;
+import com.iface.Printable;
+import com.util.Address;
+import com.util.MyDate;
+
+public class TestInterface {
+
+	public static void main(String[] args) {
+	
+		Address add = new Address();
+		add.print();
+		
+		Printable p = new Developer();
+		p.print();
+		
+		
+		p = add;
+		
+		
+		//p = new MyDate();
+	}
+
+}

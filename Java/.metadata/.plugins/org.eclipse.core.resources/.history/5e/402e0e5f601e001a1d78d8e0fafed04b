@@ -1,0 +1,8 @@
+package com.annotation;
+
+public @interface DevInfo {
+	
+	String devName();
+	String desc();
+
+}
