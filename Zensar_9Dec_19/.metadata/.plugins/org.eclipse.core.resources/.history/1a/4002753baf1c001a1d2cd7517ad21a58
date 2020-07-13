@@ -1,0 +1,37 @@
+package com.sales;
+
+import com.emp.WageEmployee;
+import com.util.MyDate;
+
+public class SalesPerson extends WageEmployee {
+	
+	private int sales;
+	private int comm;
+	
+	public SalesPerson() {
+		super();
+		this.sales = 0;
+		this.comm = 0;
+	}
+	public SalesPerson(int empId,String empName,MyDate joinDate,
+			int hrs,int rate,int sales) {
+		super(empId,empName,joinDate,hrs,rate);
+		this.sales = sales;
+		this.comm = (int) (sales * 0.08);
+	}
+	public void display() {
+		super.display();
+		System.out.println("Sales:"+sales+"\nCommission:"+comm);
+		
+	}
+	public int calSal() {
+		return super.calSal() + comm;
+	}
+	public int calIncentive() {
+		if(hrs > 100 && sales >75000) {
+			return 5000;
+		}
+		return 1000;
+	}
+
+}

@@ -1,0 +1,33 @@
+package com.acc;
+
+public class Account {
+	
+	private int accNo;
+	private String accHolderName;
+	private float bal;
+	private static float interestRate;
+	
+	
+	static {
+		System.out.println("Inside static init block");
+		interestRate = 8.5f;
+	}
+	public Account(int accNo,String accHolderName,float bal) {
+		this.accHolderName = accHolderName;
+		this.accNo = accNo;
+		this.bal = bal;
+	}
+	static public float getInterestRate() {
+		return interestRate;
+	}
+	public float calInterest(int year) {
+		float interest = (bal * year * interestRate)/100;
+		return interest;
+	}
+	public void display() {
+		System.out.println("Account No:"+accNo);
+		System.out.println("Account Name:"+accHolderName);
+		System.out.println("Balanace:"+bal);
+	}
+
+}

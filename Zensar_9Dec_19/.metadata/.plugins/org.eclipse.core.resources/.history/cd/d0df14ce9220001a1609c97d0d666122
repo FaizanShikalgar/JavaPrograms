@@ -1,0 +1,39 @@
+package com.basic;
+
+import java.io.BufferedInputStream;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.RandomAccessFile;
+
+
+public class RandomAccessDemo {
+
+	/**
+	 * @param args
+	 * @throws IOException 
+	 */
+	public static void main(String[] args) throws IOException {
+		
+		RandomAccessFile rs=
+				new RandomAccessFile(".\\src\\com\\basic\\FileDemo.java","r");
+		
+		long size=rs.length();
+		
+		long curser=size/2;
+		
+		rs.seek(curser);
+		
+		String line;
+		
+		while((line=rs.readLine())!=null)
+		{
+			System.out.println(line);
+		}
+		
+		FileInputStream fis = new FileInputStream("myFile.txt");
+		BufferedInputStream bis = new BufferedInputStream(fis);
+
+	}
+
+}

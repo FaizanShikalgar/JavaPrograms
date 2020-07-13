@@ -1,0 +1,11 @@
+import com.emp.WageEmployee;
+
+public class Test {
+
+	public static void main(String[] args) {
+
+     WageEmployee we = new WageEmployee();
+     we.display();
+	}
+
+}

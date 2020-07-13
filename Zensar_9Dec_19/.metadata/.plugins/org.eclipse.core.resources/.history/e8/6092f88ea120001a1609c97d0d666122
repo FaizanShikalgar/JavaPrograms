@@ -1,0 +1,58 @@
+package com.adv;
+import java.io.*;
+
+class Cat implements Serializable
+{
+	 String catname;
+	 transient int age;
+	 Cat()
+	 {
+		 System.out.println("Default Constructor get called");
+	 }
+	 Cat(String catname,int age)
+	 {
+		 this.catname = catname;
+		 this.age = age;
+	 }
+	 public String toString()
+	 {
+		 return "Cat Name:"+catname+"\tCat Age:"+age;
+	 }
+}
+
+public class SerializeCat 
+{
+	public static void main(String[] args)
+	{
+		// Serialized the Cat object
+		Cat c = new Cat("Manulika",5);
+		System.out.println(c);
+		try(FileOutputStream fs = new FileOutputStream("testSer.ser");
+		ObjectOutputStream os = new ObjectOutputStream(fs);	)
+		{
+			os.writeObject(c);
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		try
+		{
+			FileInputStream fis = new FileInputStream("testSer.ser");
+			ObjectInputStream ois = new ObjectInputStream(fis);
+			c = (Cat) ois.readObject();
+			System.out.println(c);
+			ois.close();
+			
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		
+		
+
+	}
+
+}
+

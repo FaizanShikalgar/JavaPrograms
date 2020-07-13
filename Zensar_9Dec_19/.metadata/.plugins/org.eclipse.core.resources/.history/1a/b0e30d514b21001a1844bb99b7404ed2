@@ -1,0 +1,19 @@
+package com.thread;
+
+public class AnotherThread implements Runnable{
+	
+	Thread t;
+	public AnotherThread() {
+		t = new Thread("Tony");
+		t.start();
+	}
+	public void run() {
+		System.out.println("Inside another thread run method");
+		for(int i=0;i<10;i=i+3) {
+			System.out.println("Thread in execution:"
+					+Thread.currentThread().getName()+
+					"\t value of i:"+i);
+		}
+	}
+
+}

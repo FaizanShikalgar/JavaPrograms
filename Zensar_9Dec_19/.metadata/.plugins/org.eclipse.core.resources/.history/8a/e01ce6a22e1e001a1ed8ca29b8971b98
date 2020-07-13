@@ -1,0 +1,5 @@
+package com.exe;
+
+public class TestException {
+
+}

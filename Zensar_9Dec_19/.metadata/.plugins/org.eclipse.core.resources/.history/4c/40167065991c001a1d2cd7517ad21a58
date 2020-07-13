@@ -1,0 +1,33 @@
+package com.emp;
+import com.util.MyDate;
+
+public class Empoyee {
+	
+	private int empId;
+	private String empName;
+	private MyDate jonDate; // add as reference to employee
+	
+	public Employee() {
+		empId = 101;
+	    empName = "Sam";
+	    jonDate = new MyDate();
+	    
+	    System.out.println("non para constructor");
+	}
+	public Employee(int empId,String empName,double sal,Address add) {
+		this.empId = empId;
+		this.empName = empName;
+		
+	}
+	
+	public void setEmployee(int eid,String ename,double s,Address add) {
+		empId = eid;
+		empName = ename;
+		
+	}
+	 public void display() {
+		System.out.println("Employee Id:"+empId+"\nEmployee Name:"+empName+"\n salary:"+sal);
+		
+	}
+
+}

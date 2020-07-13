@@ -1,0 +1,30 @@
+package com.interfaceuse;
+
+public interface Interface1 {
+
+	void method1(String str);
+	//Interface with the default method
+	default void log(String str){
+		System.out.println("I1 logging::"+str);
+	}
+	public static void print(String msg) {
+	
+		System.out.println("Printing the Data:"+msg);
+	}
+	/* You are not allowed to define the equals method which is
+	 * identical to the  object class method.If you  try  to 
+	 * do that it will give me the error message.
+	 */
+	//default boolean equals(Object o) {
+		
+	//}
+	/*
+	 * In the below case we are changing the signature with the
+	 *  help of parameter list so it is allowed.
+	 */
+	default boolean equals() {
+		System.out.println("my own equals in the interface");
+		return true;		
+	}
+	
+}

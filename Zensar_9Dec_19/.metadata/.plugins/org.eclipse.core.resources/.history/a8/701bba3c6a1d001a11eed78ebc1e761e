@@ -1,0 +1,5 @@
+package com.iface;
+
+public interface Callbale {
+
+}

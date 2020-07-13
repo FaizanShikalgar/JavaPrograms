@@ -1,0 +1,16 @@
+package com.jdbc;
+
+import java.sql.CallableStatement;
+import java.sql.Connection;
+
+public class CallableDemo {
+
+	public static void main(String[] args) {
+		Connection con = ConnectionUtil.getConnection();
+		CallableStatement cstmt = con.prepareCall("{call DeleteEmployee(?)}");
+		cstmt.setInt(1, 1);
+		cstmt.execute();
+
+	}
+
+}

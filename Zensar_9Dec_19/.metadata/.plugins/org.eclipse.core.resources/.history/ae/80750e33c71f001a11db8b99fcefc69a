@@ -1,0 +1,9 @@
+package com.collection;
+static class ReSortComparator implements Comparator<String>
+	{
+		/*if you are not using the Generics version use public int compare(object,object);*/
+		public int compare(String a,String b)
+		{
+			//System.out.println(a+"\t"+b);
+			return b.compareTo(a);
+		}

@@ -1,0 +1,24 @@
+package com.collection;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ListDemo {
+
+	public static void main(String[] args) {
+
+     List myList = new ArrayList();
+     myList.add(12);
+     myList.add(34.09);
+     myList.add(true);
+     
+     List<Integer> intList = new ArrayList<Integer>();
+     intList.add(12);
+     intList.add(20);
+     intList.add(22);
+     intList.add(122);
+     intList.add(23);
+
+	}
+
+}

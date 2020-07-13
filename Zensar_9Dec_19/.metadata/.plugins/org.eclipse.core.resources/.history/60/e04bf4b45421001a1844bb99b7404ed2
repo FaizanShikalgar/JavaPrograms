@@ -1,0 +1,55 @@
+package com.thread.adv;
+class Account
+{
+	int accNo;
+	float balance;
+	float currBalance;
+      
+	Account(int no,float bal)
+	{
+		accNo=no;
+		balance=bal;
+	}
+	public void withdraw(float amt)
+	{
+ 		System.out.println("Inside Withdraw ...");
+ 		System.out.println("Name of the Owner Thread:"+Thread.currentThread().getName());
+		try{
+		Thread.currentThread().sleep(1000);
+		System.out.println("balance before withdrawing "+balance);
+		currBalance=balance-amt;
+		System.out.println("balance while withdrawing  : "+currBalance);
+		if(currBalance<5000) {
+			System.out.println("Insuffient balance");
+			wait();
+		}
+		Thread.currentThread().sleep(1000);
+		balance=currBalance;
+		Thread.currentThread().sleep(1000);
+		}catch(Exception e){}
+		System.out.println("balance after withdrawing  : "+balance);
+	}
+
+	 public void deposite(float amt)
+    {
+ 		System.out.println("Inside deposite ...");
+ 		System.out.println("Name of the Owner Thread:"+Thread.currentThread().getName());
+		try
+		{
+			Thread.currentThread().sleep(1000);
+			System.out.println("balance before depositing "+balance);
+			currBalance=balance+amt;
+			System.out.println("balance while depositing  : "+currBalance);
+			Thread.currentThread().sleep(1000);
+			balance=currBalance;
+			Thread.currentThread().sleep(1000);
+			notify();
+			
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		System.out.println("balance after depositing  : "+balance);
+	}
+}
